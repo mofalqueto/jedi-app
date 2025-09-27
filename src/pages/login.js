@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   return (
-<View style={styles.container}>
+<ImageBackground source={{uri: 'https://wallpapercave.com/wp/wp2724422.jpg'}} style={styles.container}>
   <Text style={styles.title}>Olá Padawan</Text>
       <TextInput
         style={styles.input}
@@ -57,7 +57,7 @@ const Login = () => {
       <TouchableOpacity style={styles.button} onPress={handleCadastro}>
         <Text style={styles.buttonText}>Cadastrar</Text>
       </TouchableOpacity>
-    </View>
+</ImageBackground>
   );
 };
 
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: '#000',
   },
   title: {
     fontSize: 24,
