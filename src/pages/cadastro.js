@@ -40,7 +40,7 @@ export default class Cadastro extends Component {
   };
   render() {
     return (
-      <ImageBackground source={{uri: 'https://wallpapercave.com/wp/wp2724422.jpg'}} style={styles.container}>
+      <ImageBackground source={require("../../assets/wall.png")} style={styles.container}>
         <TextInput
           style={styles.input}
           placeholder="Seu nome, jovem Padawan"
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
       marginVertical: 10,
       width: "80%",
       color: "#4dff4d",
+      backgroundColor: "rgba(0,0,0,0.5)",
     },
     button: {
       backgroundColor: "#4d94ff",

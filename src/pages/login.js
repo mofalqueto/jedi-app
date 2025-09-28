@@ -34,7 +34,7 @@ const Login = () => {
   };
 
   return (
-<ImageBackground source={{uri: 'https://wallpapercave.com/wp/wp2724422.jpg'}} style={styles.container}>
+<ImageBackground source={require("../../assets/wall.png")} style={styles.container}>
   <Text style={styles.title}>Olá Padawan</Text>
       <TextInput
         style={styles.input}
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     width: "80%",
     color: "#4dff4d",
+    backgroundColor: "rgba(0,0,0,0.5)",
   },
   button: {
     backgroundColor: "#4d94ff",
