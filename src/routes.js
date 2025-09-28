@@ -9,38 +9,11 @@ import CardDetails from "./pages/cardDetails";
 
 const Stack = createStackNavigator();
 
-// Efeito de transição "Hyperspace"
-const forHorizontalModal = ({ current, next, inverted, layouts: { screen } }) => {
-  const progress = current.progress.interpolate({
-    inputRange: [0, 1],
-    outputRange: [0, 1],
-  });
-
-  return {
-    cardStyle: {
-      transform: [
-        {
-          scale: progress.interpolate({
-            inputRange: [0, 1],
-            outputRange: [0.5, 1],
-          }),
-        },
-      ],
-    },
-    overlayStyle: {
-      opacity: progress.interpolate({
-        inputRange: [0, 1],
-        outputRange: [0, 0.5],
-        extrapolate: 'clamp',
-      }),
-    },
-  };
-};
-
 export default function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        initialRouteName="login"
         screenOptions={{
           headerTitleAlign: "center",
           headerStyle: {
@@ -49,12 +22,12 @@ export default function Routes() {
           headerTitleStyle: {
             fontWeight: "bold",
             color: "#4dff4d", // Verde Jedi
-            textShadowColor: 'rgba(77, 255, 77, 0.75)',
-            textShadowOffset: {width: -1, height: 1},
-            textShadowRadius: 10
+            textShadowColor: "rgba(77, 255, 77, 0.75)",
+            textShadowOffset: { width: -1, height: 1 },
+            textShadowRadius: 10,
           },
           headerTintColor: "#4d94ff", // Azul Jedi
-          cardStyleInterpolator: forHorizontalModal, // Efeito de transição
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS, // Efeito de transição
         }}
       >
         <Stack.Screen
